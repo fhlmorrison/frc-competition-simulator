@@ -1,4 +1,13 @@
+:root {
+  --header-bg-color: rgb(32, 34, 37);
+  --sidebar-bg-color: rgb(47, 49, 54);
+  --main-bg-color: rgb(54, 57, 63);
+  --main-text-color-dark: rgb(0,0,0);
+  --main-text-color-light: rgb(255,255,255);
+}
+
 body {
+  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +19,136 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background-color: var(--header-bg-color);
+  color: var(--main-text-color-light);
+  flex: 0 1 auto;
+  margin: 0;
+  min-height: 50px;
+}
+
+.content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer {
+  flex: 0 1 20px;
+  background-color: var(--header-bg-color);
+}
+
+.sidebar {
+  flex: 0 0 400px;
+  height: 100%;
+  align-self: left;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--sidebar-bg-color);
+  color: var(--main-text-color-light);
+}
+
+.teams {
+  width: fit-content;
+  min-width: 50px;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--header-bg-color);
+  text-align: center;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.teams .scrollBase {
+  height: 100%;
+}
+
+.teams .icon {
+  padding: 5px;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+}
+
+.teams .icon:hover {
+  background-color: var(--sidebar-bg-color);
+}
+
+.scrollbase::-webkit-scrollbar { /* WebKit */
+  width: 0px;
+  display: none;
+}
+
+.scrollBase {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.team {
+  padding: 5px 5px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px 0 0 10px;
+}
+
+.team:hover {
+  filter: 0.6;
+}
+
+
+.button {
+  cursor: pointer;
+}
+
+.details {
+  width: 100%;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#main-title {
+  padding-left: 10px;
+}
+
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+}
+
+.tabBar {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0 0 0;
+  background-color: var(--sidebar-bg-color);
+}
+
+.tab {
+  flex: 0 1 20%;
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+  color: var(--main-text-color-light);
+  padding: 1px 15px 0 15px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.page {
+  background-color: var(--main-bg-color);
+  flex: 1 0 auto;
 }

@@ -1,0 +1,4 @@
+Add event details section (calendar button).
+Add sorting of teams before rendering on team list.
+Design pages.
+Decide on team attributes for details section.

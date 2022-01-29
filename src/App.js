@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Main from './components/Main';
 
-function App() {
+const App = () => {
+
+  /**
+   * 
+   */
+  const [teams, setTeams] = useState([
+    {
+        number:2702,
+        name:"Rebels",
+    },
+    {
+        number: 1114,
+        name: "Simbotics",
+    },
+    {
+        number: 2056,
+        name: "OP Robotics",
+    }
+  ])
+
+  const [shown, setShown] = useState(0)
+
+  const setDetails = (number) => {
+    setShown(number)
+  }
+
+  /**
+   * 
+   * @param {*} number 
+   */
+  const deleteTeam = (number) => {
+    setTeams(teams.filter((team) => 
+    team.number !== number))
+  }
+
+  /**
+   * 
+   */
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <div className='content'>
+        <Sidebar teams={teams} onSelect={setDetails}
+        onDelete={deleteTeam} shown={shown}/>
+        <Main teams={teams}/>
+      </div>
+      <div className='footer'></div>
     </div>
   );
 }
+
 
 export default App;
