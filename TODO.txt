@@ -1,4 +1,5 @@
 Add event details section (calendar button).
-Add sorting of teams before rendering on team list.
+--Refactor details page to render only one, with content being conditional on prop(s).
+Figure out why the SCROLLBAR WON'T DISSAPEAR IN CHROME!!!
 Design pages.
 Decide on team attributes for details section.

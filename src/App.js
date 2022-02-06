@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Main from './components/Main';
+import AddForm from './components/AddForm';
 
 const App = () => {
 
@@ -20,7 +21,7 @@ const App = () => {
     {
         number: 2056,
         name: "OP Robotics",
-    }
+    },
   ])
 
   const [shown, setShown] = useState(0)
@@ -38,6 +39,10 @@ const App = () => {
     team.number !== number))
   }
 
+  const addTeam = (teamDetails) => {
+
+  }
+
   /**
    * 
    */
@@ -50,6 +55,7 @@ const App = () => {
         <Main teams={teams}/>
       </div>
       <div className='footer'></div>
+      <AddForm onChange={addTeam}/>
     </div>
   );
 }

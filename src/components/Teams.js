@@ -1,15 +1,17 @@
 import Team from "./Team"
-import { FaCalendarDay, FaPlusCircle } from "react-icons/fa";
+import CalendarIcon from "./CalendarIcon";
+import { FaPlusCircle } from "react-icons/fa";
 
 
 const Teams = ({ teams, onSelect, shown }) => {
+  const sortedTeams = [].concat([...teams])
+  .sort((a, b) => a.number > b.number ? 1 : -1)
+
   return (
     <div className="teams">
-    <div className="icon">
-      <FaCalendarDay size={25}/>
-    </div>
+    <CalendarIcon shown={shown} onSelect={onSelect}/>
       <div className="scrollBase" >
-        {teams.map((team) => (
+        {sortedTeams.map((team) => (
           <Team key={team.number} team={team} onSelect={onSelect} shown={shown}/>
         ))}
         <div className="icon">
